@@ -1,0 +1,33 @@
+{
+  "name": "event-machine",
+  "version": "0.0.1",
+  "description": "processes events from repository, replaying history at a given time-lapse",
+  "homepage": "http://www.beta80group.it",
+  "license": "MIT",
+  "author": { 
+	"name" : "Sandro Locati", 
+	"email" : "sandro.locati@beta80group.it"
+  },
+  "contributors": [{ 
+	"name" : "Mario Caramello", 
+	"email" : "mario.caramello@beta80group.it"
+  },{ 
+	"name" : "Matteo Redaelli", 
+	"email" : "matteo.redaelli@beta80group.it"
+  }],
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "debug": "node server.js --debug true",
+    "sample": "node server.js --debug true --port 3000 --ipMask 0.0.0.0 --apiHost localhost --apiPort 3001 --apiPath /events --timeLapseFactor 100"
+  },
+  "dependencies": {
+	"minimist": "^1.2.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+	"body-parser": "^1.18.3",
+    "socket.io": "^2.1.1",
+	"request": "^2.88.0"
+  },
+  "engines" : { "node" : ">=8.11.2" } 
+}

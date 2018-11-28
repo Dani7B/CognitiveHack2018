@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Live stock price ticker</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+      $(function () {
+		/*
+		var feedSocket = io.connect('http://localhost:3000/feed');
+		var statusSocket = io.connect('http://localhost:3000/status');
+		
+		feedSocket.on('Processing timestamp', function(timestamp) {
+			$('#timestampSpan').text(new Date(timestamp));
+        });
+		statusSocket.on('New status code', function(statusCode) {
+			$('#statusCode').text(statusCode);
+        });
+		*/
+
+ 		var rootSocket = io.connect('http://localhost:3000/');
+		rootSocket.on('processingTimestampChannel', function(timestamp) {
+			$('#timestampSpan').text(new Date(timestamp));
+        });
+		rootSocket.on('newStatusCodeChannel', function(statusCode) {
+			$('#statusCode').text(statusCode);
+        });
+     });
+    </script>
+
+  </head>
+  <body>
+    Last timestamp processed: <span id="timestampSpan">no data yet</span><br />
+    Current status: <span id="statusCode">no data yet</span>
+  </body>
+</html>

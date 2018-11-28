@@ -1,0 +1,30 @@
+{
+  "name": "api-mock-server",
+  "version": "0.0.1",
+  "description": "simple mock of AI interface",
+  "homepage": "http://www.beta80group.it",
+  "license": "MIT",
+  "author": { 
+	"name" : "Sandro Locati", 
+	"email" : "sandro.locati@beta80group.it"
+  },
+  "contributors": [{ 
+	"name" : "Mario Caramello", 
+	"email" : "mario.caramello@beta80group.it"
+  },{ 
+	"name" : "Matteo Redaelli", 
+	"email" : "matteo.redaelli@beta80group.it"
+  }],
+  "main": "mockServer.js",
+  "scripts": {
+    "start": "node mockServer.js",
+    "debug": "node mockServer.js --debug true --port 3001 --ipMask 0.0.0.0"
+  },
+  "dependencies": {
+	"minimist": "^1.2.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+	"body-parser": "^1.18.3"
+  },
+  "engines" : { "node" : ">=8.11.2" } 
+}
