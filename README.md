@@ -1,44 +1,44 @@
 # CognitiveHack2018
-###CognitiveHack Rome 2018 - Challenge "IT Infrastructure Cognitive Monitoring"
+### CognitiveHack Rome 2018 - Challenge "IT Infrastructure Cognitive Monitoring"
 
-##References
+## References
 GitHub: https://github.com/mczei/CognitiveHack2018
 Online event server base url: http://169.62.240.202:3000
 	- /events: return number of events available
 	- /events/{id}: return the event for the given position (from 0 to number of events)
 
 
-##Included folders:
+## Included folders:
 - Data: 3 datasets to train, test and evaluate the system
 - EventServer: NodeJS server processing and posting events
 - APIMock: NodeJS mock server to test receiving events
 
-##Datasets:
+## Datasets:
 - Training.zip: Dataset containing both the event and, when occurred, the opened ticket.
 - Test.zip: Same dataset as Training.zip but always without the ticket
 - Evaluate.zip: A new dataset always without the ticket
 
-##Data definition
+## Data definition
 All datasets are a JSON array of the following event objects
-...
-{
-	"MessageId": The message id provided by environment
-	"IdTT": The ticket created by the user, when applicable (only in the training dataset. Other dataset always empty string)
-	"Severity": The severity assigned
-	"Dup": Duplication advisor
-	"TimeRecived": Timestamp when event was created
-	"TimeAcknowledge": Timestamp when event was acknowledged
-	"UserAcknowledge": Acknowledging user
-	"Node": Node sending the message
-	"TimeActionOwn": Timestamp when action took place
-	"UserActionOwn": User in charge of action
-	"TimeActionAck": N/A (always null)
-	"Application": Application sending the message
-	"MsgGroup": Message group
-	"Object": Lookup path for detailed info
-	"MessageText": Event details
-}
-...
+`{`
+`	"MessageId": The message id provided by environment`
+`	"IdTT": The ticket created by the user, when applicable (only in the training dataset. Other dataset always empty string)`
+`	"Severity": The severity assigned`
+`	"Dup": Duplication advisor`
+`	"TimeRecived": Timestamp when event was created`
+`	"TimeAcknowledge": Timestamp when event was acknowledged`
+`	"UserAcknowledge": Acknowledging user`
+`	"Node": Node sending the message`
+`	"TimeActionOwn": Timestamp when action took place`
+`	"UserActionOwn": User in charge of action`
+`	"TimeActionAck": N/A (always null)`
+`	"Application": Application sending the message`
+`	"MsgGroup": Message group`
+`	"Object": Lookup path for detailed info`
+`	"MessageText": Event details`
+
+`}`
+
 
 ## How to use EventServer without custom configurations
  - Requires: 
@@ -64,7 +64,7 @@ All datasets are a JSON array of the following event objects
    - http://localhost:3000/cron/start/{timelapseFactor}/{date} --> Start POST-ing events with the given time lapse factor and starting from the given date. Do not use timelapseFactor higher then 5000. Provide the date as ISO (yyyy-MMM-dd)
 
 
-##How to use APIMock without custom configurations
+## How to use APIMock without custom configurations
  - Requires: 
    - NodesJS >=8.11.2
    - npm >=6.2.0
