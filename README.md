@@ -24,7 +24,7 @@ All datasets are a JSON array of the following event objects
 {
 	"MessageId": "The message id provided by environment",
 	"IdTT": "The ticket created by the user, when applicable (only in the training dataset. Other dataset always empty string)",
-	"Severity": "The severity assigned by system/environment (CRITICAL, MAJOR, MINOR, WARNING, NORMAL)","
+	"Severity": "The severity assigned by system/environment (CRITICAL, MAJOR, MINOR, WARNING, NORMAL)",
 	"Dup": "Duplication advisor (counter)",
 	"TimeRecived": "Timestamp when event was created",
 	"TimeAcknowledge": "Timestamp when event was acknowledged by user (may be auto-ack)",
