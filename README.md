@@ -22,7 +22,7 @@ Online event server base url: http://169.62.240.202:3000
 All datasets are a JSON array of the following event objects
 ```json
 {
-	"MessageId": "The message id provided by environment","
+	"MessageId": "The message id provided by environment",
 	"IdTT": "The ticket created by the user, when applicable (only in the training dataset. Other dataset always empty string)",
 	"Severity": "The severity assigned",
 	"Dup": "Duplication advisor",
