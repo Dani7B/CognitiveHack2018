@@ -24,19 +24,19 @@ All datasets are a JSON array of the following event objects
 {
 	"MessageId": "The message id provided by environment",
 	"IdTT": "The ticket created by the user, when applicable (only in the training dataset. Other dataset always empty string)",
-	"Severity": "The severity assigned",
-	"Dup": "Duplication advisor",
+	"Severity": "The severity assigned by system/environment (CRITICAL, MAJOR, MINOR, WARNING, NORMAL)
+	"Dup": "Duplication advisor (counter)",
 	"TimeRecived": "Timestamp when event was created",
-	"TimeAcknowledge": "Timestamp when event was acknowledged",
-	"UserAcknowledge": "Acknowledging user",
+	"TimeAcknowledge": "Timestamp when event was acknowledged by user (may be auto-ack)",
+	"UserAcknowledge": "Acknowledging user (SYSTEM when auto-ack)",
 	"Node": "Node sending the message",
-	"TimeActionOwn": "Timestamp when action took place",
+	"TimeActionOwn": "Timestamp when action took place by humer operator",
 	"UserActionOwn": "User in charge of action",
 	"TimeActionAck": "N/A (always null)",
 	"Application": "Application sending the message",
-	"MsgGroup": "Message group",
+	"MsgGroup": "Message group (logical aggregation)",
 	"Object": "Lookup path for detailed info",
-	"MessageText": "Event details"
+	"MessageText": "Event details (head may contain event specific codes)"
 }
 ```
 
@@ -46,7 +46,7 @@ All datasets are a JSON array of the following event objects
    - npm >=6.2.0
  - Optional: 
    - yarn >=1.7.0
- - Clone the repo from GitHum
+ - Clone the repo from GitHub
  - Fetch node modules from inside the EventServer folder (i.e. yarn install)
  - Create a folder named "Repository" at the same level of the EventServer
  - Copy into the "Repository" folder any dataset of your choice and rename it "result.json"
